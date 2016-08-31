@@ -25,7 +25,13 @@ let b = 32
 
 
 
-
+switch a % b {
+    case 0:
+    print(true)
+    
+    default:
+    print(false)
+}
 
 
 
@@ -33,7 +39,13 @@ let b = 32
 /*: Question 2
 ### **(2)** Print 'true' if y divided by x is greater than three, otherwise print 'false'.
 */
-
+switch Double(y)/x > 3 {
+case true:
+    print(true)
+    
+default:
+    print(false)
+}
 
 
 
@@ -46,7 +58,13 @@ let b = 32
 
 
 
-
+switch y > Int(x) && a/b > 9 {
+case true:
+    print(true)
+    
+default:
+    print(false)
+}
 
 
 
@@ -54,8 +72,16 @@ let b = 32
 /*: Question 4
 ### **(4)** Write a function named `isGreater` that takes two `Int` arguments and returns a `String`. This function should look to see if `a` is greater than `b`. If it is, it returns back the `String` 'yep', else it returns back the `String` 'nope`.
 */
+func isGreater (a:Int, b:Int) -> String {
+    switch a > b {
+    case true:
+        return "yep"
+    default:
+        return "nope"
+    }
+}
 
-
+isGreater(5, b: 3)
 
 
 
@@ -72,7 +98,18 @@ let b = 32
  ```
 */
 
+func isForceWith (a: String) -> Bool {
+    switch a == "Luke" || a == "Leia" || a == "Anakin" || a == "Obi Wan" || a == "Yoda" || a == "Vader" {
+    case true:
+        return true
+    
+    default:
+    return false
+}
+}
 
+isForceWith("Yoda")
+isForceWith("Jacq")
 
 
 
@@ -88,8 +125,25 @@ let b = 32
  ```
 */
 
+func isInRange(a:Int) {
+    switch a {
+    case 0...3:
+        print("small")
+        
+    case 4...6:
+        print("medium")
+        
+    case 7...10:
+        print("big")
+        
+    default:
+        print("not sure")
+    }
+}
 
-
+isInRange(7)
+isInRange(4)
+isInRange(2)
 
 
 
